@@ -1,7 +1,7 @@
 import pytest
 from rest_framework.test import APIClient
 
-from tests.factories import BoardsFactory, UserFactory
+from tests.factories import BoardFactory, UserFactory
 
 
 @pytest.fixture
@@ -35,6 +35,6 @@ def inactive_user(db):
 
 @pytest.fixture
 def board(db, active_user):
-    return BoardsFactory(
+    return BoardFactory(
         author=active_user,
     )
