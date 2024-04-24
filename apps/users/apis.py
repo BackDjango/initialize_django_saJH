@@ -62,7 +62,7 @@ class SignInAPI(APIView):
             status.HTTP_200_OK: BaseResponseSerializer(data_serializer=OutputSerializer),
         },
     )
-    def post(self, request: Request) -> Response:  # type: ignore
+    def post(self, request: Request) -> Response:
         input_serializer = self.InputSerializer(data=request.data)
         input_serializer.is_valid(raise_exception=True)
 
@@ -75,11 +75,10 @@ class SignInAPI(APIView):
 
 class RefreshTokenAPI(TokenRefreshView):
     class InputSerializer(BaseSerializer):
-        refresh_token = serializers.CharField(required=True, max_length=128)
+        refresh = serializers.CharField(required=True, max_length=128)
 
     class OutputSerializer(BaseSerializer):
         access_token = serializers.CharField()
-        refresh_token = serializers.CharField()
 
     @swagger_auto_schema(
         tags=["유저"],
