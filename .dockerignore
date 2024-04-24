@@ -1,0 +1,12 @@
+docker
+tests
+mypy.ini
+pytest.ini
+README.md
+.dockerignore
+.pytest_cache
+.mypy_cache
+.coverage
+.coveragerc
+.git
+.github
