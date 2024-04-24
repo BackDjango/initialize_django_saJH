@@ -3,7 +3,7 @@ from django.db import models
 from apps.users.models import User
 
 
-class Boards(models.Model):
+class Board(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -11,4 +11,4 @@ class Boards(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table = "boards"
+        db_table = "board"

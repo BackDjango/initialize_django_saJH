@@ -37,3 +37,9 @@ class AuthenticationFailedException(BaseAPIException):
     status_code = status.HTTP_401_UNAUTHORIZED
     default_detail = "Incorrect authentication credentials."
     default_code = "authentication_failed"
+
+
+class NotFoundException(BaseAPIException):
+    status_code = status.HTTP_404_NOT_FOUND
+    default_detail = "Not found."
+    default_code = "not_found"
