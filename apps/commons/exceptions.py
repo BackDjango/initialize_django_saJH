@@ -19,3 +19,15 @@ class ValidationException(BaseAPIException):
     status_code = status.HTTP_400_BAD_REQUEST
     default_detail = "Validation failed."
     default_code = "validation_failed"
+
+
+class AlreadyExistException(BaseAPIException):
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = "Already exist."
+    default_code = "already_exist"
+
+
+class InvalidTokenException(BaseAPIException):
+    status_code = status.HTTP_401_UNAUTHORIZED
+    default_detail = "Invalid token."
+    default_code = "invalid_token"
