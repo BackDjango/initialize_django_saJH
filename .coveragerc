@@ -1,0 +1,8 @@
+[run]
+omit =
+    apps/commons/*
+    apps/apis/*
+    */migrations/*
+    */urls.py
+    */models.py
+    */__init__.py
