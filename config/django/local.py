@@ -1,4 +1,6 @@
-from config.django.base import *  # noqa
+# flake8: noqa
+
+from config.django.base import *
 
 DATABASES = {
     "default": {
