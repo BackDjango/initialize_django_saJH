@@ -13,6 +13,9 @@ from apps.users.services import UserService
 
 
 class SignUpAPI(APIView):
+    authentication_classes = ()
+    permission_classes = ()
+
     class InputSerializer(BaseSerializer):
         email = serializers.EmailField(required=True, max_length=255)
         password = serializers.CharField(required=True, max_length=128)
@@ -45,6 +48,9 @@ class SignUpAPI(APIView):
 
 
 class SignInAPI(APIView):
+    authentication_classes = ()
+    permission_classes = ()
+
     class InputSerializer(BaseSerializer):
         username = serializers.CharField(required=True, max_length=16)
         password = serializers.CharField(required=True, max_length=128)

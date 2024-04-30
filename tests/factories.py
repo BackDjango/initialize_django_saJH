@@ -2,7 +2,7 @@ import factory
 from django.contrib.auth.hashers import make_password
 from faker import Faker
 
-from apps.boards.models import Boards
+from apps.boards.models import Board
 from apps.users.models import User
 
 faker = Faker("ko_KR")
@@ -31,10 +31,10 @@ class UserFactory(factory.django.DjangoModelFactory):
             self.is_active = True
 
 
-class BoardsFactory(factory.django.DjangoModelFactory):
+class BoardFactory(factory.django.DjangoModelFactory):
     title = factory.LazyAttribute(lambda _: faker.sentence())
     content = factory.LazyAttribute(lambda _: faker.text())
     author = factory.SubFactory(UserFactory)
 
     class Meta:
-        model = Boards
+        model = Board

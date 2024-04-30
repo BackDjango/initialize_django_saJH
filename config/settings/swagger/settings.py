@@ -11,4 +11,6 @@ SWAGGER_SETTINGS = {
     },
     "USE_SESSION_AUTH": False,
     "DEFAULT_MODEL_RENDERING": "example",
+    "PERSIST_AUTH": True,
+    "DEEP_LINKING": True,
 }
